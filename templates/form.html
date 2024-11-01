@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <title>فرم نظرسنجی</title>
+</head>
+<body>
+    <h1>فرم نظرسنجی</h1>
+    <form action="/" method="post">
+        <label for="fullname">نام و نام خانوادگی:</label><br>
+        <input type="text" id="fullname" name="fullname" required><br><br>
+
+        <label for="phone">شماره تماس:</label><br>
+        <input type="text" id="phone" name="phone" required><br><br>
+
+        <label for="feedback">توضیحات:</label><br>
+        <textarea id="feedback" name="feedback" maxlength="2500" rows="5" required></textarea><br><br>
+
+        <label>آیا زبان‌آموز PTELine بوده‌اید؟</label><br>
+        <input type="radio" id="pteline_yes" name="pteline_student" value="بله" required>
+        <label for="pteline_yes">بله</label><br>
+        <input type="radio" id="pteline_no" name="pteline_student" value="خیر" required>
+        <label for="pteline_no">خیر</label><br><br>
+
+        <label for="teacher_name">نام استاد:</label><br>
+        <input type="text" id="teacher_name" name="teacher_name"><br><br>
+
+        <label for="target_score">نمره هدف:</label><br>
+        <input type="text" id="target_score" name="target_score" pattern="[0-9+]+" title="لطفاً فقط عدد و + وارد کنید" required><br><br>
+
+        <label for="received_score">نمره دریافتی:</label><br>
+        <input type="text" id="received_score" name="received_score" pattern="[0-9+]+" title="لطفاً فقط عدد و + وارد کنید" required><br><br>
+
+        <button type="submit">ارسال</button>
+    </form>
+
+    <br><br>
+    <a href="{{ url_for('generate_qr') }}" target="_blank">تولید QR کد برای فرم</a><br>
+    <a href="{{ url_for('download_excel') }}" target="_blank">دانلود اطلاعات به‌صورت اکسل</a>
+</body>
+</html>
